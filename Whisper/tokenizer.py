@@ -38,7 +38,10 @@ class Tokenizer:
     #decoding portion of the tokens
     def decode(self, tokens: List[int], **kw) ->str: 
         return self.encoding.decode(clean, **kw) 
+    def decode_with_timestamp(self, tokens:List[int], **kw ) -> str: 
+        return self.encoding.decode(tokens, **kw)
 
+        
     @cached_property
     def eot(self) -> int: 
         return self.encoding.eot_token
